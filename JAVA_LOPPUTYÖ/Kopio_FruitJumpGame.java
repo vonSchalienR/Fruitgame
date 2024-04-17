@@ -45,6 +45,8 @@ public class Kopio_FruitJumpGame extends JFrame implements ActionListener, KeyLi
     private static Clip clip; // Tarvitaan tämä jotta ääniraita saadaan
 
     public Kopio_FruitJumpGame() {
+        soitaTunnari("pedro.wav");
+
         setTitle("Fruit Jump Game");
         setSize(WIDTH, HEIGHT);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -77,7 +79,8 @@ public class Kopio_FruitJumpGame extends JFrame implements ActionListener, KeyLi
         timer = new Timer(10, this);
         timer.start();
         
-        soitaTunnari("pedro_.mp3");
+        
+   
     }
 
     private void loadFruitImages() {
@@ -240,12 +243,10 @@ public class Kopio_FruitJumpGame extends JFrame implements ActionListener, KeyLi
 
     public static void soitaTunnari(String filePath) {      
         try {
-            if (clip != null) {
-                clip.stop();  // Lopetaan jo soimassa oleva tunnari, jos ei ole "null" (Toiminta mikäli käyttäjä haluaa pelata pelin uudestaan --> tunnari alkaa alusta)
-            }
             File file = new File(filePath);     // Luodaan uusi tiedosto-olio
             AudioInputStream audioIn = AudioSystem.getAudioInputStream(file);   //Haetaan tiedoston syöte virta
             clip = AudioSystem.getClip();   // Luodaan uusi Clip-olio, johon tallennetaan äänitiedoston toistoon liittyvät tiedot
+            System.out.println("Tiedostopolku: " + file.getAbsolutePath());
             clip.open(audioIn);     // tunnari alkaa soimaan
             clip.loop(Clip.LOOP_CONTINUOUSLY);  // Loputon audio loop
             clip.start();  // Aloitetaan soittamaan alusta 
@@ -258,5 +259,7 @@ public class Kopio_FruitJumpGame extends JFrame implements ActionListener, KeyLi
             e.printStackTrace();
         }
     }
+    
+    
 
 }     
