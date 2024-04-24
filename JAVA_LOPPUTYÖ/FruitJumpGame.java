@@ -92,14 +92,14 @@ public class FruitJumpGame extends JFrame implements ActionListener, KeyListener
 
         g2d.fillRect(0, 0, WIDTH, HEIGHT);
 
-        // Draw text at the top middle of the screen
+        
         if (spaceBarClicks < 10) {
             g2d.setFont(new Font("Arial", Font.BOLD, 20));
             FontMetrics fm = g2d.getFontMetrics();
             String message = "Click the spacebar 10 times and have a party!";
             int messageWidth = fm.stringWidth(message);
             int x = (WIDTH - messageWidth) / 2;
-            int y = 40; // Adjust this value to change the vertical position
+            int y = 40; 
             g2d.drawString(message, x, y);
         }
 
@@ -172,8 +172,7 @@ public class FruitJumpGame extends JFrame implements ActionListener, KeyListener
     }
 
     private void showDiscoBall() {
-        // Implement method to show disco ball
-        // For example, you can draw an image of a disco ball on the screen
+        
     }
 
     private void startFlicker() {
