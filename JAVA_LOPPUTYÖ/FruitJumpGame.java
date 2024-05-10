@@ -195,7 +195,7 @@ public class FruitJumpGame extends JFrame implements ActionListener, KeyListener
     }
 
     private void restartGame() {
-        // Reset game variables
+        
         fruitX = WIDTH / 2 - FRUIT_WIDTH / 2;
         fruitY = GROUND_Y;
         fruitVelocityY = 0;
@@ -206,10 +206,10 @@ public class FruitJumpGame extends JFrame implements ActionListener, KeyListener
 
         currentFruitImage = fruitImages.get(currentFruitIndex);
 
-        // Stop any ongoing timers
+        
         timer.stop();
 
-        // Restart the timer
+        
         timer.start();
     }
 
